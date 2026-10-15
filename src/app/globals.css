@@ -46,6 +46,33 @@
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
+
+  --color-mint-50: #f0fdf9;
+  --color-mint-100: #ccfbf1;
+  --color-mint-200: #99f6e4;
+  --color-mint-500: #14b8a6;
+  --color-mint-800: #115e59;
+
+  --color-peach-50: #fffaf5;
+  --color-peach-100: #ffedd5;
+  --color-peach-200: #fed7aa;
+  --color-peach-500: #f97316;
+
+  --color-butter-50: #fefce8;
+  --color-butter-100: #fef9c3;
+  --color-butter-200: #fef08a;
+
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+
+  --color-lavender-50: #f5f3ff;
+  --color-lavender-100: #ede9fe;
+  --color-lavender-200: #ddd6fe;
+
+  --radius-3xl: 1.75rem;
+  --radius-4xl: 2.25rem;
+  --radius-5xl: 3rem;
 }
 
 :root {
@@ -63,7 +90,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'IBM Plex Sans', 'Noto Sans Myanmar', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', 'Noto Sans Myanmar', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #f8fafc;
   color: #0f172a;
   -webkit-font-smoothing: antialiased;
@@ -83,11 +110,9 @@ html, body {
 @keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

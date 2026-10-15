@@ -1,19 +1,107 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useOnboarding } from "@/context/OnboardingContext";
+
+const SPY_SECTIONS = [
+  { id: "hero", label: "Overview" },
+  { id: "how-it-works", label: "3-Step Flow" },
+  { id: "why-choose-us", label: "Why Us" },
+  { id: "solutions", label: "AI Workforce" },
+  { id: "special-offer", label: "Offer" },
+];
 
 export default function HomePage() {
+  const { openOnboarding } = useOnboarding();
   const [overrideActive, setOverrideActive] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 250;
+      let current = "";
+      for (const { id } of SPY_SECTIONS) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            current = id;
+          }
+        }
+      }
+      if (!current && window.scrollY < 250) {
+        current = "hero";
+      }
+      if (current) {
+        setActiveSection(current);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="flex flex-col w-full bg-[#f8fafc] animate-page-fade">
-      {/* Subtle decorative ambient backdrop */}
-      <div className="relative w-full overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-teal-200/30 via-teal-700/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+    <>
+      {/* Stitch Desktop Vertical Scrollspy Indicator - Fixed to Viewport */}
+      <nav
+        aria-label="Page Navigation"
+        className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-start gap-3 p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm"
+      >
+        <div className="px-1.5 pb-1 border-b border-slate-200/60 w-full mb-0.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Jump To
+          </span>
+        </div>
+        <div className="relative flex flex-col gap-1 w-full">
+          {/* Connecting Vertical Track */}
+          <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-slate-200 -z-0"></div>
+          {SPY_SECTIONS.map((sec) => {
+            const isActive = activeSection === sec.id;
+            return (
+              <a
+                key={sec.id}
+                href={`#${sec.id}`}
+                className={`scrollspy-link group relative z-10 flex items-center gap-2.5 py-1 px-1.5 rounded-lg transition-all ${
+                  isActive
+                    ? "text-teal-700 font-semibold"
+                    : "text-slate-500 hover:text-teal-700"
+                }`}
+              >
+                <span
+                  className={`indicator-dot w-2.5 h-2.5 rounded-full ring-4 ring-white transition-all ${
+                    isActive
+                      ? "bg-teal-700 scale-125"
+                      : "bg-slate-300 group-hover:bg-teal-600"
+                  }`}
+                ></span>
+                <span
+                  className={`indicator-text text-[11px] font-medium tracking-tight whitespace-nowrap ${
+                    isActive ? "text-teal-900 font-semibold" : ""
+                  }`}
+                >
+                  {sec.label}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Main Landing Page Content */}
+      <div className="flex flex-col w-full bg-[#f8fafc] animate-page-fade">
+        {/* Subtle decorative ambient backdrop */}
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-teal-200/30 via-teal-700/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
         {/* HERO SECTION */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 pt-10 pb-20 lg:pt-14 lg:pb-28 animate-section-rise">
+        <section
+          id="hero"
+          className="max-w-7xl mx-auto px-6 lg:px-12 pt-10 pb-20 lg:pt-14 lg:pb-28 animate-section-rise"
+        >
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {/* Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] mb-6 transition-all hover:bg-slate-50">
@@ -42,24 +130,26 @@ export default function HomePage() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-14">
-              <Link
-                href="/book-a-demo"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-label-md font-semibold text-sm transition-all shadow-sm hover:-translate-y-0.5 active:scale-95"
+              <button
+                type="button"
+                onClick={openOnboarding}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-teal-700 hover:bg-teal-800 text-white font-label-md font-semibold text-sm transition-all shadow-md hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
-                <span>Book a Free Demo</span>
+                <span>Build Your AI Bot (စတင်တည်ဆောက်မည်)</span>
                 <span className="material-symbols-outlined text-[18px]">
                   arrow_forward
                 </span>
-              </Link>
-              <a
-                href="#interactive-demo"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-label-md text-sm font-semibold border border-slate-200/80 shadow-xs transition-all hover:-translate-y-0.5"
+              </button>
+              <button
+                type="button"
+                onClick={openOnboarding}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-label-md text-sm font-semibold border border-slate-200/80 shadow-xs transition-all hover:-translate-y-0.5 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-teal-700 text-[18px]">
                   play_circle
                 </span>
-                <span>စနစ်အလုပ်လုပ်ပုံ ကြည့်မည် (Interactive Demo)</span>
-              </a>
+                <span>စနစ်အလုပ်လုပ်ပုံ ကြည့်မည် (Interactive Setup)</span>
+              </button>
             </div>
 
             {/* Floating Product Preview Card */}
@@ -351,7 +441,7 @@ export default function HomePage() {
       </section>
 
       {/* 3-STEP SIMPLE WORKFLOW */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section id="how-it-works" className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-wider font-semibold text-teal-700 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 inline-block mb-3">
             HOW BOSS &amp; BOTS WORKS
@@ -519,7 +609,7 @@ export default function HomePage() {
       </section>
 
       {/* AI EMPLOYEE PERSONAS PREVIEW */}
-      <section id="ai-employees" className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28 animate-section-rise">
+      <section id="solutions" className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28 animate-section-rise">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-wider font-semibold text-teal-700 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 inline-block mb-3">
             CUSTOMIZED FOR YOUR BUSINESS
@@ -643,7 +733,7 @@ export default function HomePage() {
       </section>
 
       {/* SPECIAL OFFER CTA BANNER */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
+      <section id="special-offer" className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
         <div className="w-full rounded-3xl bg-[#0d2d2a] text-white p-8 sm:p-12 lg:p-16 card-soft-shadow relative overflow-hidden">
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold mb-6">
@@ -658,13 +748,14 @@ export default function HomePage() {
               သင့်လုပ်ငန်း၏ လက်ရှိ customer flow, chat volume နှင့် inventory စနစ်များကို ကျွန်ုပ်တို့၏ ကျွမ်းကျင် AI အင်ဂျင်နီယာများနှင့် အခမဲ့ ၁ ပတ် စမ်းသပ်လေ့လာနိုင်ပါသည်။ (အရည်အသွေးထိန်းသိမ်းရန် တစ်ပတ်လျှင် ၅ ဦးသာ ကန့်သတ်လက်ခံပါသည်)
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Link
-                href="/book-a-demo"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-900 text-sm font-bold transition-transform hover:-translate-y-0.5"
+              <button
+                type="button"
+                onClick={openOnboarding}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-900 text-sm font-bold transition-transform hover:-translate-y-0.5 cursor-pointer"
               >
-                <span>Book a Free Demo (ရက်ချိန်းရယူရန်)</span>
+                <span>Start Interactive Setup (အခမဲ့ စတင်မည်)</span>
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </Link>
+              </button>
               <a
                 href="tel:09442508508"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
@@ -680,5 +771,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+  </>
   );
 }

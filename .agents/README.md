@@ -11,6 +11,7 @@ This directory houses specialized agent instructions, persona definitions, and d
 | [`sell-products-agent.md`](./sell-products-agent.md) | Retail & E-Commerce catalog inquiry, order intake, human escalation | `bnb_business_context.md` (Sec 4A) |
 | [`promote-services-agent.md`](./promote-services-agent.md) | Service package inquiry, booking & appointment intake, qualification | `bnb_business_context.md` (Sec 4B) |
 | [`onboarding-auth-agent.md`](./onboarding-auth-agent.md) | Frictionless onboarding, deferred OTP verification, Google SSO | `Project Requirement Document_.md` |
+| [`interactive-onboarding-spec.md`](./interactive-onboarding-spec.md) | 5-Phase interactive onboarding overlay, live bot simulation, blended auth | `interactive_onboarding_plan.md` |
 | [`frontend-stitch-agent.md`](./frontend-stitch-agent.md) | Next.js App Router UI engineering, Stitch design adherence | `Design.md`, Stitch Project `BnB` |
 
 ---
