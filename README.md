@@ -66,11 +66,21 @@ Launched directly from landing page CTAs without requiring an immediate account:
 - Native **Burmese Unicode** and **English** across all customer-facing interfaces, form helpers, and chatbot conversation scripts.
 - Pre-integrated business context for Myanmar mobile payments (**KBZPay**, **WavePay**, **CB Pay**) and local logistics delivery patterns.
 
+### 5. Enterprise Legal & Regulatory Suite (`/terms-of-service`, `/privacy-policy`)
+- **Trilingual/Dual Reading Experience:** Instant reading toggle between Dual (Bilingual English + Myanmar), English Only, and Burmese Only.
+- **Interactive Navigation & Progress Bar:** Real-time reading progress indicator (0–100%) and sticky section outline with scrollspy active clause tracking.
+- **Enterprise Regulatory Standards:** Grounded in live UTS Myanmar operational policies—covering Myanmar mobile SMS OTP authentication, service scope, prepaid non-refundable points architecture, AI disclaimer and merchant liability, acceptable use, liability cap (3-month fee maximum or MMK 50,000), and Yangon court jurisdiction.
+
+### 6. Custom 404 Resilience & Autonomous Route Recovery (`/not-found.js`)
+- **Distraction-Free Return Canvas:** Coordinated header and footer suppression via `OnboardingContext` (`isNotFound`) and CSS `:has([data-not-found-page="true"])` selector.
+- **Kinetic Radar Pulse Indicator:** Animated Bot radar pulse icon (`.animate-radar-pulse`) and centered ambient teal glow.
+- **Context-Aware Feedback:** Displays the requested missing path and provides immediate one-click actions: "ပင်မစာမျက်နှာသို့ ပြန်သွားရန် · Return Home" and "Go Back" via Next.js router.
+
 ---
 
 ## 📦 Commit History & Roadmap
 
-### ⏪ The Commit Before: Initial Foundation (`8cf1cc7`)
+### ⏪ Commit: Initial Foundation (`8cf1cc7`)
 **Commit Message:** `feat: initialize BossNBots Next.js project with UI pages, components, and agent configurations`
 
 This commit established the initial repository bootstrap and foundational architecture:
@@ -89,10 +99,10 @@ This commit established the initial repository bootstrap and foundational archit
 
 ---
 
-### ⏩ The Immediate Upcoming Commit: Interactive Onboarding, Dashboard & Context Spec
-**Commit Message:** `feat: implement interactive 5-phase onboarding, merchant dashboard, header redesign & business context specifications`
+### ⏪ Commit: Interactive Onboarding, Dashboard & Sign-In (`33db68a`)
+**Commit Message:** `feat: add sign-in page component and supporting app structure`
 
-This commit introduces the full interactive application layer, persistent state management, and enterprise domain specifications:
+This commit delivered the full interactive application layer, persistent state management, and enterprise domain specifications:
 - **Interactive Onboarding & Progressive Auth Engine:**
   - `src/components/OnboardingOverlay.jsx` — Complete 5-phase interactive modal overlay with dynamic archetype selector, pain point interview, channel selector, live 2-chip bot conversation simulation, and claim auth gate.
   - `src/context/OnboardingContext.jsx` — Application-wide React Context managing modal state, user session (`bnb_user`), business profile (`bnb_business_profile`), and cross-tab storage synchronization.
@@ -118,6 +128,27 @@ This commit introduces the full interactive application layer, persistent state 
 
 ---
 
+### ⏩ The Immediate Upcoming Commit: Custom 404 Route, Bilingual Legal Compliance Suite & Navigation Enhancements
+**Suggested Commit Message:** `feat: implement custom 404 page, bilingual terms of service and privacy policy routes, and footer attributions`
+
+This upcoming commit introduces full legal compliance routes, custom error page recovery, and navigation refinements:
+- **Autonomous & Minimalist 404 Not Found Page:**
+  - `src/app/not-found.js` — Tailored error page with animated radar-pulse bot icon (`animate-radar-pulse`), bilingual guidance (`"ပင်မစာမျက်နှာသို့ ပြန်သွားနိုင်ပါသည်"`), requested path feedback, and direct "Return Home" / "Go Back" CTAs.
+  - `src/context/OnboardingContext.jsx` — Added `isNotFound` state and `setIsNotFound` updater to coordinate global component states.
+  - `src/components/Navbar.jsx` & `src/components/Footer.jsx` — Integrated `isNotFound` suppression logic so header and footer do not interfere with the 404 canvas.
+  - `src/app/globals.css` — Added `@keyframes botRadarPulse`, `.animate-radar-pulse`, and `body:has([data-not-found-page="true"])` header/footer display rules.
+- **Bilingual Legal Compliance Suite:**
+  - `src/app/privacy-policy/` (`page.js`, `layout.js`) — 9-section enterprise privacy policy with 3-way language toggle (Dual Bilingual / English Only / Burmese Only), real-time reading progress bar (0–100%), and scrollspy table of contents.
+  - `src/app/terms-of-service/` (`page.js`, `layout.js`) — 10-section terms of service covering UTS Myanmar legal identity, SMS OTP verification, prepaid points architecture, AI disclaimer, acceptable use, liability limitation, and Yangon courts jurisdiction.
+- **Footer Polish & Developer Attribution:**
+  - `src/components/Footer.jsx` — Added quick links to Privacy Policy and Terms of Service, responsive bottom navigation, and official designer/developer attribution: `"Design and developed by Caleb Jawa Hkun using NextJS."`
+- **Domain & Agent Specifications:**
+  - `.agents/bnb_business_context.md` — Expanded Section 9 & 10 with verbatim and structured bilingual Terms of Service and Privacy Policy requirements.
+  - `.agents/terms_privacy.md` & `terms_privacy.md` — Comprehensive legal policy reference documents.
+  - `.agents/README.md` — Updated agent index to reference legal specifications.
+
+---
+
 ## 📂 Project Directory Structure
 
 ```text
@@ -129,6 +160,7 @@ BnB/
 │   ├── promote-services-agent.md          # Service & booking bot persona rules
 │   ├── onboarding-auth-agent.md           # Progressive auth strategy guidelines
 │   ├── frontend-stitch-agent.md           # Stitch UI design & styling rules
+│   ├── terms_privacy.md                   # Verbatim live bilingual legal standards
 │   └── README.md                          # Agent index & roster
 ├── public/                                # Static SVG assets and icons
 ├── src/
@@ -139,13 +171,20 @@ BnB/
 │   │   ├── contact/page.js                # Contact info & Yangon HQ details
 │   │   ├── dashboard/page.js              # Merchant management dashboard
 │   │   ├── fonts/                         # Local IBM Plex Sans font assets
+│   │   ├── not-found.js                   # Minimalist radar-pulse 404 page
 │   │   ├── pricing/page.js                # Subscription plans & add-on pricing
+│   │   ├── privacy-policy/                # Enterprise Privacy Policy (dual/en/my)
+│   │   │   ├── layout.js                  # SEO metadata layout
+│   │   │   └── page.js                    # Interactive reader with scrollspy
 │   │   ├── sign-in/page.js                # Standalone sign-in portal
+│   │   ├── terms-of-service/              # Enterprise Terms of Service (dual/en/my)
+│   │   │   ├── layout.js                  # SEO metadata layout
+│   │   │   └── page.js                    # Interactive reader with scrollspy
 │   │   ├── globals.css                    # Tailwind CSS v4, custom utility layers
 │   │   ├── layout.js                      # Root layout with OnboardingProvider
 │   │   └── page.js                        # Homepage / Landing page
 │   ├── components/
-│   │   ├── Footer.jsx                     # Enterprise footer with UTS Myanmar credentials
+│   │   ├── Footer.jsx                     # Enterprise footer with legal links & attribution
 │   │   ├── Navbar.jsx                     # Dynamic auth-aware navigation header
 │   │   └── OnboardingOverlay.jsx          # 5-Phase interactive onboarding modal
 │   └── context/
@@ -153,6 +192,7 @@ BnB/
 ├── AGENTS.md                              # Next.js workspace agent instructions
 ├── Design.md                              # Stitch Autonomous Kinetic Precision tokens
 ├── package.json                           # Dependencies & scripts
+├── terms_privacy.md                       # Root legal reference document
 └── README.md                              # Project documentation
 ```
 
@@ -222,6 +262,8 @@ BnB/
 ## 🏢 Corporate Background & Legal
 
 - **Developer & Operator:** **UTS Myanmar (U-Tech Solutions)**
+- **Lead Architect & Developer:** **Caleb Jawa Hkun**
 - **Headquarters:** Floor 8, No.(28), Corner of Bogyoke Road and Botahtaung Pagoda Road, Yangon, Myanmar
 - **Contact:** `admin@utsmyanmar.com` · `bnb@utsmyanmar.com` | `09442508508` · `09442509509`
 - **Original Source Reference:** [https://bossnbots.com/](https://bossnbots.com/)
+- **Legal Compliance:** [Terms of Service](/terms-of-service) · [Privacy Policy](/privacy-policy)

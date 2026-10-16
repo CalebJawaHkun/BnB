@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useOnboarding } from "@/context/OnboardingContext";
 
 export default function Footer() {
   const pathname = usePathname();
-  if (pathname?.startsWith("/dashboard")) return null;
+  const { isNotFound } = useOnboarding();
+  if (pathname?.startsWith("/dashboard") || isNotFound) return null;
 
   return (
     <footer className="w-full bg-slate-950 text-slate-300 mt-16">
@@ -127,6 +129,28 @@ export default function Footer() {
                   chevron_right
                 </span>
                 <Link
+                  href="/privacy-policy"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-teal-400 text-[16px]">
+                  chevron_right
+                </span>
+                <Link
+                  href="/terms-of-service"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-teal-400 text-[16px]">
+                  chevron_right
+                </span>
+                <Link
                   href="/contact"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
@@ -177,16 +201,36 @@ export default function Footer() {
         </div>
 
         {/* Contained Copyright & Status */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="inline-flex h-2 w-2 rounded-full bg-teal-400"></span>
             <span className="font-label-sm text-label-sm text-slate-400">
               All systems operational · Enterprise SLA
             </span>
           </div>
-          <p className="font-body-sm text-body-sm text-slate-400 text-center sm:text-right">
-            © 2026 Boss &amp; Bots (BnB). All rights reserved · Powered by UTS Myanmar
-          </p>
+
+          <div className="flex items-center gap-4 text-xs font-label-sm text-slate-400">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-teal-400 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-slate-600">·</span>
+            <Link
+              href="/terms-of-service"
+              className="hover:text-teal-400 transition-colors"
+            >
+              Terms of Service
+            </Link>
+          </div>
+
+          <div className="font-body-sm text-body-sm text-slate-400 text-center md:text-right">
+            <p>© 2026 Boss &amp; Bots (BnB). All rights reserved.</p>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Design and developed by Caleb Jawa Hkun using NextJS.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

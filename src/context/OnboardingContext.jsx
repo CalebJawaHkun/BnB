@@ -9,6 +9,8 @@ const OnboardingContext = createContext({
   user: null,
   profile: null,
   isOnboarded: false,
+  isNotFound: false,
+  setIsNotFound: () => {},
   setIsOnboarded: () => {},
   completeOnboarding: () => {},
   openOnboarding: () => {},
@@ -25,6 +27,7 @@ export function OnboardingProvider({ children }) {
   const [profile, setProfile] = useState(null);
   // Pure in-memory session state: resets to false on hard refresh or logout
   const [isOnboarded, setIsOnboarded] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
 
   const refreshAuth = () => {
     if (typeof window !== "undefined") {
@@ -111,6 +114,8 @@ export function OnboardingProvider({ children }) {
         profile,
         isOnboarded,
         setIsOnboarded,
+        isNotFound,
+        setIsNotFound,
         completeOnboarding,
         openOnboarding,
         openSignIn,

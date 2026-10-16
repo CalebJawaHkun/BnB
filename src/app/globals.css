@@ -235,3 +235,40 @@ html, body {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+/* 404 Not Found Page Layout Override: Clean canvas without header/footer interference */
+body:has([data-not-found-page="true"]) header,
+body:has([data-not-found-page="true"]) footer {
+  display: none !important;
+}
+
+body:has([data-not-found-page="true"]) main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes botRadarPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-radar-pulse {
+  animation: botRadarPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

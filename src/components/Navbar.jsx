@@ -7,7 +7,7 @@ import { useOnboarding } from "@/context/OnboardingContext";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { openOnboarding, openSignIn, user, profile, isOnboarded, signOut } = useOnboarding();
+  const { openOnboarding, openSignIn, user, profile, isOnboarded, signOut, isNotFound } = useOnboarding();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const profileDropdownRef = useRef(null);
@@ -36,8 +36,8 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }
 
-  // If on dashboard, do not render floating website navbar to prevent overlap
-  if (pathname?.startsWith("/dashboard")) {
+  // If on dashboard or 404 not-found page, do not render floating website navbar
+  if (pathname?.startsWith("/dashboard") || isNotFound) {
     return null;
   }
 
