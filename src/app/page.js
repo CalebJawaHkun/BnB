@@ -140,16 +140,15 @@ export default function HomePage() {
                   arrow_forward
                 </span>
               </button>
-              <button
-                type="button"
-                onClick={openOnboarding}
+              <a
+                href="#interactive-demo"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-label-md text-sm font-semibold border border-slate-200/80 shadow-xs transition-all hover:-translate-y-0.5 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-teal-700 text-[18px]">
                   play_circle
                 </span>
-                <span>စနစ်အလုပ်လုပ်ပုံ ကြည့်မည် (Interactive Setup)</span>
-              </button>
+                <span>စနစ်အလုပ်လုပ်ပုံ ကြည့်မည် (Interactive Demo)</span>
+              </a>
             </div>
 
             {/* Floating Product Preview Card */}

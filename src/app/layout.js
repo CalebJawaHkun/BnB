@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AiChatbotWidget from "@/components/AiChatbotWidget";
 import { OnboardingProvider } from "@/context/OnboardingContext";
 
 const ibmPlexSans = localFont({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <AiChatbotWidget />
         </OnboardingProvider>
       </body>
     </html>

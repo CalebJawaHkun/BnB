@@ -582,7 +582,7 @@ export default function DashboardPage() {
 
             <button
               type="button"
-              onClick={() => openOnboarding()}
+              onClick={() => openOnboarding({ force: true })}
               className="w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-50 text-slate-600 transition-colors"
             >
               <SlidersHorizontal className="w-4 h-4 text-slate-500" />
@@ -713,7 +713,7 @@ export default function DashboardPage() {
                       type="button"
                       onClick={() => {
                         setUserDropdownOpen(false);
-                        openOnboarding();
+                        openOnboarding({ force: true });
                       }}
                       className="w-full text-left flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700"
                     >
@@ -853,7 +853,7 @@ export default function DashboardPage() {
               {/* Redo / Setup Trigger */}
               <button
                 type="button"
-                onClick={() => openOnboarding()}
+                onClick={() => openOnboarding({ force: true })}
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-100 hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-colors shadow-none cursor-pointer"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-slate-500" />
@@ -1027,7 +1027,7 @@ export default function DashboardPage() {
                 </span>
                 <button
                   type="button"
-                  onClick={() => openOnboarding()}
+                  onClick={() => openOnboarding({ force: true })}
                   className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors shadow-none cursor-pointer"
                 >
                   Configure

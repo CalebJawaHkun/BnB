@@ -299,78 +299,18 @@ Business owners require no technical background to get started in 3 simple steps
 
 ---
 
-## 9. Legal, Data Privacy & Acceptable Use Specification (ဥပဒေရေးရာ၊ စည်းမျဉ်းများနှင့် ကိုယ်ရေးကိုယ်တာ မူဝါဒများ)
-**Official Sources:** 
-- Terms of Service: [https://bossnbots.com/terms-of-service](https://bossnbots.com/terms-of-service)
-- Privacy Policy: [https://bossnbots.com/privacy-policy](https://bossnbots.com/privacy-policy)  
-**Detailed Verbatim Reference:** See [`terms_privacy.md`](./terms_privacy.md)  
-**Last Updated:** 29 August 2026  
-**Operator:** UTS Myanmar (U-Tech Solutions) — [https://utsmyanmar.com/](https://utsmyanmar.com/)
+## 9. Legal, Data Privacy & Acceptable Use Summary (ဥပဒေရေးရာနှင့် အချက်အလက် မူဝါဒများ)
 
----
+### မြန်မာဘာသာ (Original Burmese)
+- **ဝန်ဆောင်မှု ပေးသူ:** UTS Myanmar (U-Tech Solutions) မှ တရားဝင် တာဝန်ယူ ဆောင်ရွက်ပါသည်။
+- **အချက်အလက် စုဆောင်းမှု:** အကောင့်အချက်အလက်များ၊ ဖုန်းနံပါတ် OTP များ၊ Ad Studio အတွက် ထည့်သွင်းသော စာသားများနှင့် ပုံများ၊ ငွေလွှဲပြေစာ screenshot များ၊ ချိတ်ဆက်ထားသော Telegram နှင့် Facebook Messenger chat log များကို သိမ်းဆည်းပါသည်။
+- **AI ထုတ်လုပ်မှု တာဝန်ယူမှု (AI Content Disclaimer):** AI မှ ထုတ်ပေးသော စာသား၊ ပုံနှင့် မက်ဆေ့ခ်ျများသည် အလိုအလျောက် ထုတ်လုပ်ထားခြင်း ဖြစ်သဖြင့် အမှားအယွင်း ရှိနိုင်ပါသည်။ လုပ်ငန်းရှင်အနေဖြင့် လူမှုကွန်ရက်တွင် မတင်မီ သို့မဟုတ် customer ထံ မပို့မီ ဈေးနှုန်း၊ ရက်စွဲ၊ အချက်အလက်များကို ကိုယ်တိုင် ပြန်လည်စစ်ဆေးရန် တာဝန်ရှိပါသည်။
+- **တားမြစ်ချက်များ:** တရားမဝင်သော ပစ္စည်းများ ရောင်းချခြင်း၊ ခွင့်ပြုချက်မရှိဘဲ စနစ်ကို scrape လုပ်ခြင်း သို့မဟုတ် malware တင်သွင်းခြင်းများကို တင်းကြပ်စွာ တားမြစ်ထားပါသည်။
+- **ငွေပြန်အမ်းမှု မူဝါဒ:** ဝယ်ယူထားသော Points နှင့် Subscription Plan များသည် မြန်မာနိုင်ငံ ဥပဒေအရ လိုအပ်ချက်မှအပ ပြန်လည်အမ်းငွေ (Refund) ပေးအပ်ခြင်း မရှိပါ။
 
-### မြန်မာဘာသာ (Original Burmese Context & Translation)
-
-#### A. ဝန်ဆောင်မှုဆိုင်ရာ စည်းမျဉ်းများ အကျဉ်းချုပ် (Terms of Service Summary)
-1. **စာချုပ်နှင့် သဘောတူညီချက် (Section 01 - The Agreement):**  
-   Boss & Bots ဝဘ်ဆိုဒ်၊ Android အက်ပ်၊ သုံးစွဲသူ ပေါ်တယ် (user portal)၊ referral ပေါ်တယ်နှင့် ဆက်စပ်ဝန်ဆောင်မှုများကို အသုံးပြုခြင်းသည် UTS Myanmar နှင့် ချုပ်ဆိုသော စာချုပ်ဖြစ်ပြီး စည်းမျဉ်းများနှင့် Privacy Policy ကို သဘောတူညီပြီး ဖြစ်ပါသည်။ လုပ်ငန်းကိုယ်စား အသုံးပြုပါက ထိုလုပ်ငန်းကို တာဝန်ယူ ချည်နှောင်ခွင့်ရှိကြောင်း အတည်ပြုရပါမည်။
-2. **အကောင့်များနှင့် လုံခြုံရေး (Section 02 - Accounts):**  
-   Customer အကောင့်များသည် မြန်မာဖုန်းနံပါတ်နှင့် စကားဝှက်ဖြင့် ဝင်ရောက်ပြီး SMS OTP (SMSPoh) ဖြင့် အတည်ပြုပါသည်။ Referrer အကောင့်များကို UTS Myanmar မှ ဖန်တီးပေးပြီး ဝဘ်ဆိုဒ်တွင် အလားတူ ဖုန်း/စကားဝှက်ဖြင့် ဝင်ရောက်ရပါသည်။ Android အက်ပ်သည် customer အကောင့်များအတွက်သာ သီးသန့် ဖြစ်ပါသည်။ သုံးစွဲသူသည် မိမိစကားဝှက်၊ OTP နှင့် အကောင့်လှုပ်ရှားမှုများအတွက် တာဝန်ရှိပြီး အလွဲသုံးစားမှု သို့မဟုတ် မလုံခြုံဟု ယူဆရသော အကောင့်များကို ဆိုင်းငံ့ပိတ်သိမ်းနိုင်ပါသည်။
-3. **ဝန်ဆောင်မှု အတိုင်းအတာ (Section 03 - What Boss & Bots Provides):**  
-   ကြော်ညာစာသားနှင့် Studio-Style ပုံများ ဖန်တီးခြင်း၊ AI Employees များနှင့် ဆက်သွယ်ခြင်း၊ Demo တောင်းဆိုခြင်း၊ Points များ ဝယ်ယူခြင်းနှင့် ခွင့်ပြုထားသော referrer များအတွက် ကော်မရှင် ခြေရာခံခြင်းတို့ကို ဆောင်ရွက်ပေးပါသည်။
-4. **Points နှင့် ငွေပေးချေမှု (Section 04 - Points and Payments):**  
-   Points များသည် feature များအတွက် ကြိုတင်ငွေဖြည့်သွင်းထားသော Digital Credits သာဖြစ်ပြီး ငွေသား၊ ဘဏ်အပ်ငွေ သို့မဟုတ် ပြန်ထုတ်ယူနိုင်သော wallet မဟုတ်ပါ (ခွင့်ပြုထားသော referral payout လုပ်ငန်းစဉ်မှအပ)။ ဝယ်ယူမှုများကို ဘဏ်/wallet လွှဲပြောင်းမှု screenshot ဖြင့် အတည်ပြုပြီး Admin စစ်ဆေးပြီးမှ Points ထည့်သွင်းပေးပါသည်။ မြန်မာနိုင်ငံ ဥပဒေအရ လိုအပ်သည်မှအပ Refund ပေးအပ်ခြင်း မရှိပါ။
-5. **AI ထုတ်လုပ်မှု တာဝန်ယူမှု (Section 05 - AI Content Disclaimer):**  
-   AI မှ အလိုအလျောက် ထုတ်လုပ်ထားသော စာသား၊ ပုံနှင့် chat အဖြေများသည် မတိကျခြင်း၊ မပြည့်စုံခြင်း သို့မဟုတ် အခြားအရာများနှင့် ဆင်တူနိုင်သဖြင့် လူမှုကွန်ရက်တွင် မတင်မီ သို့မဟုတ် customer ထံ မပို့မီ ဆိုင်ရှင်ကိုယ်တိုင် ပြန်လည်စစ်ဆေးရပါမည်။ သုံးစွဲသူသည် မိမိ prompt၊ ဓာတ်ပုံ၊ ကြေညာချက်များနှင့် အသုံးချမှုတို့အတွက် (မြန်မာနိုင်ငံ၏ ကြော်ညာနှင့် စားသုံးသူကာကွယ်ရေး ဥပဒေများ အပါအဝင်) အပြည့်အဝ တာဝန်ရှိပါသည်။
-6. **ခွင့်ပြုထားသော အသုံးပြုမှု (Section 06 - Acceptable Use):**  
-   ဥပဒေချိုးဖောက်ခြင်း၊ ထိခိုက်နစ်နာစေခြင်း၊ spam ပို့ခြင်း၊ scrape လုပ်ခြင်း၊ စနစ်ကျူးကျော်စစ်ဆေးခြင်း၊ malware တင်သွင်းခြင်း၊ အခြားသူအဖြစ် ဟန်ဆောင်ခြင်း၊ အမုန်းစကား သို့မဟုတ် ကလေးသူငယ်ဆိုင်ရာ မလျော်ကန်သော အကြောင်းအရာများ ထုတ်လုပ်ခြင်း၊ နှင့် session/billing စည်းမျဉ်းများကို ကျော်လွှားရန် အကောင့်မျှဝေသုံးစွဲခြင်းများကို တင်းကြပ်စွာ တားမြစ်ထားပါသည်။
-7. **ညွှန်းဆိုမှု စနစ် (Section 07 - Referrals):**  
-   Referral portal တွင် ထုတ်ပြန်ထားသော စည်းမျဉ်းများအတိုင်း ဆောင်ရွက်ပြီး UTS Myanmar မှ စစ်ဆေးအတည်မပြုမချင်း ငွေထုတ်ယူခွင့်ကို အာမမခံပါ။ လိမ်လည်မှုနှင့် ချိုးဖောက်မှုများတွင် ပမာဏများကို ရုပ်သိမ်းနိုင်ပါသည်။
-8. **မူပိုင်ခွင့် (Section 08 - Intellectual Property):**  
-   စနစ်၊ အမှတ်တံဆိပ်နှင့် ဆော့ဖ်ဝဲလ်သည် UTS Myanmar သို့မဟုတ် licensors များ ပိုင်ဆိုင်ပါသည်။ သုံးစွဲသူသည် မိမိတင်သွင်းသော ပစ္စည်းများ၏ မူပိုင်ခွင့်ကို ဆက်လက်ပိုင်ဆိုင်ပြီး ဝန်ဆောင်မှုပေးရန် လိုအပ်သော လိုင်စင်ကို ကုမ္ပဏီထံ ခွင့်ပြုပေးပါသည်။ Third-party AI model စည်းမျဉ်းများနှင့်အညီ မိမိထုတ်လုပ်ထားသော ကြော်ညာများကို မိမိလုပ်ငန်းအတွက် အသုံးပြုခွင့် ရှိပါသည်။
-9. **တာဝန်ခံမှု ကန့်သတ်ချက် (Section 09 - Availability and Liability Limitation):**  
-   စနစ်ချို့ယွင်းမှုမရှိခြင်း သို့မဟုတ် AI အမှားကင်းခြင်းကို အာမမခံပါ။ မြန်မာနိုင်ငံ ဥပဒေအရ အများဆုံး ခွင့်ပြုထားသည့်အတိုင်း UTS Myanmar ၏ စုစုပေါင်း တာဝန်ခံမှုသည် နစ်နာမှုမတိုင်မီ ၃ လအတွင်း သုံးစွဲသူ ပေးချေခဲ့သော ပမာဏအထိသာ (သို့မဟုတ် မည်သည့်ငွေမျှ မပေးချေထားပါက အများဆုံး MMK 50,000 အထိသာ) ကန့်သတ်ထားပါသည်။
-10. **စီရင်ပိုင်ခွင့်နှင့် အပြောင်းအလဲများ (Section 10 - Law and Changes):**  
-    မြန်မာနိုင်ငံ ဥပဒေများဖြင့် စီရင်ဆုံးဖြတ်ပြီး ရန်ကုန်မြို့ရှိ တရားရုံးများတွင်သာ အငြင်းပွားမှုများကို ဖြေရှင်းဆောင်ရွက်မည် ဖြစ်ပါသည်။ စည်းမျဉ်းအပြောင်းအလဲများကို ဝဘ်ဆိုဒ်တွင် အချိန်နှင့်တပြေးညီ တင်ပြသွားပါမည်။
-
----
-
-#### B. ကိုယ်ရေးကိုယ်တာနှင့် အချက်အလက် မူဝါဒ (Privacy Policy Summary)
-1. **စုဆောင်းသော ဒေတာများ:**  
-   - အကောင့်အချက်အလက် (အမည်၊ လုပ်ငန်းအမည်၊ ဖုန်းနံပါတ်၊ အီးမေးလ်၊ ဆိုရှယ်မီဒီယာလင့်ခ်၊ hashed စကားဝှက်၊ referral ကုဒ်)။
-   - အတည်ပြုဒေတာ (SMS OTP ကုဒ်များ)။
-   - Studio နှင့် ထုတ်ကုန်ဒေတာ (Brand info၊ ထုတ်ကုန်ဓာတ်ပုံများ၊ prompt စာသားများ၊ generated copy/images၊ chat logs၊ demo requests)။
-   - ငွေပေးချေမှုနှင့် points (pack ရွေးချယ်မှု၊ ဘဏ်ပြေစာ screenshot၊ points balance)။
-   - နည်းပညာဒေတာ (Device type၊ browser/app၊ IP address၊ ခန့်မှန်းတည်နေရာ၊ crash/request logs)။
-2. **ဒေတာ အသုံးပြုခြင်းနှင့် မျှဝေခြင်း:**  
-   - ကိုယ်ရေးကိုယ်တာ ဒေတာများကို မည်သူ့ထံမျှ ရောင်းချခြင်း မပြုပါ။
-   - ဝန်ဆောင်မှုပေးရန် UTS Myanmar ဝန်ထမ်းများ၊ SMSPoh (SMS OTP)၊ Hosting/Database/AI Infrastructure providers များ၊ ချိတ်ဆက်ထားသော Messaging Platforms (Telegram, Facebook Messenger) နှင့် ဥပဒေအရ လိုအပ်ပါက သက်ဆိုင်ရာ အာဏာပိုင်များထံသာ လိုအပ်သလောက် မျှဝေပါသည်။
-3. **ဒေတာ ထိန်းသိမ်းမှုနှင့် လုံခြုံရေး:**  
-   - အကောင့် သက်တမ်းရှိနေစဉ်နှင့် အကောင့်ပိတ်ပြီးနောက် ဥပဒေ၊ စာရင်းအင်း၊ အငြင်းပွားမှု ဖြေရှင်းရေးအတွက် သင့်လျော်သော ကာလအထိ ထိန်းသိမ်းထားပြီး မလိုအပ်တော့ပါက ဖျက်ပစ်ခြင်း သို့မဟုတ် anonymize ပြုလုပ်ပါသည်။
-   - Access control၊ password hashing၊ HTTPS encryption နှင့် session lock များဖြင့် ကာကွယ်ထားပါသည်။
-4. **ကလေးသူငယ် ကန့်သတ်ချက်:**  
-   - လုပ်ငန်းသုံးအတွက်သာ ဖြစ်ပြီး အသက် ၁၃ နှစ်အောက် ကလေးသူငယ်များ သုံးစွဲခွင့် လုံးဝ မပြုပါ။
-
----
-
-### English Translation (Official Live Legal Standards)
-
-#### A. Terms of Service Specification
-1. **Contractual Nature (Section 01):** Binding agreement between the user/business and UTS Myanmar governing the Boss & Bots website, Android app, user portal, and referral portal. Acceptance of Terms constitutes acceptance of the Privacy Policy. Business representatives represent they possess lawful corporate authority.
-2. **Account Infrastructure (Section 02):** Myanmar mobile phone numbers serve as primary IDs authenticated via SMS OTP (SMSPoh). Referral accounts are created administratively by UTS Myanmar and sign in via the web. The Android app is strictly dedicated to customer accounts. Users are liable for credential safeguarding; accounts exhibiting abusive, unpaid, or insecure characteristics are subject to immediate suspension.
-3. **Service Scope (Section 03):** AI marketing copy & studio photography generation, conversational AI Employees, interactive demo requests, point purchases, and referral commission tracking.
-4. **Prepaid Points Architecture (Section 04):** Points represent prepaid service consumption credits; they are non-cash, non-deposit, and non-withdrawable (except approved referral commission payouts). Points are credited upon manual admin review of mobile banking transfer screenshots. Strict "no refund" policy except where mandated by Myanmar statutory law.
-5. **AI Content Disclaimer & Merchant Liability (Section 05):** All ad copy, images, and chat responses are machine-generated without warranty of accuracy, completeness, or uniqueness. Business owners maintain full, non-delegable legal liability under Myanmar advertising and consumer-protection statutes before distributing or transmitting outputs.
-6. **Acceptable Use & Anti-Abuse (Section 06):** Strict prohibition on unlawful conduct, harm, spamming, automated scraping, vulnerability probing, malware dissemination, impersonation, hate speech, child sexual exploitation material, and unauthorized session/billing sharing.
-7. **Referral Program (Section 07):** Commissions and payouts are contingent upon portal rules and explicit administrative approval; UTS Myanmar reserves the right to withhold/claw back funds linked to fraudulent or refunded activity.
-8. **Intellectual Property (Section 08):** UTS Myanmar and licensors retain all software, platform, and brand IP. Users retain ownership of uploaded creative assets and grant UTS Myanmar an operational processing license. Users hold commercial usage rights to generated ads for their marketing, subject to underlying AI model provider terms.
-9. **Limitation of Liability Cap (Section 09):** UTS Myanmar expressly disclaims lost profits, lost data, or consequential damages. Aggregate liability is contractually capped at the customer's total fees paid in the **preceding three (3) months**, or **MMK 50,000** if no fees were paid.
-10. **Jurisdiction & Venue (Section 10):** Governed by the substantive laws of Myanmar. Exclusive jurisdiction resides in the courts of **Yangon**, Myanmar.
-
-#### B. Privacy Policy Specification
-1. **Data Categories Collected (Section 02):** Account credentials (name, business name, phone, email, social links, hashed passwords), SMS OTP logs, marketing studio prompts/photos/outputs, AI chat histories, payment slip screenshots, referral activity logs, and technical telemetry (IP address, device metadata, crash diagnostics).
-2. **Data Disclosures (Section 04):** Zero data sales. Disclosed strictly to authorized UTS Myanmar operational staff, critical cloud/AI infrastructure sub-processors, SMS gateway provider (**SMSPoh**), connected messaging channels (**Telegram**, **Facebook Messenger**), and law enforcement when statutorily mandated.
-3. **Data Retention & Security (Sections 05–06):** Maintained through active account life plus a reasonable post-termination compliance period; protected by access controls, HTTPS transit encryption, password hashing, and active session enforcement.
-4. **User Rights (Section 07):** Account holders may request data access, rectification, or deletion via in-app/web channels or `bnb@utsmyanmar.com`.
-5. **Child Protection (Section 08):** Strictly commercial SME tool; prohibited for children under the age of 13.
-
+### English Translation
+- **Operator:** Operated and legally administered by UTS Myanmar (U-Tech Solutions).
+- **Collected Data:** Phone credentials, SMS OTP records, Ad Studio prompts and generated imagery, bank transfer screenshots, connected Facebook Messenger and Telegram chat transcripts.
+- **AI Content Disclaimer:** Generated ad copy, images, and chat responses are produced by automated AI systems and may contain inaccuracies. Business owners bear full responsibility for reviewing prices, promotional claims, and text before public dissemination or customer transmission.
+- **Acceptable Use:** Strict prohibition against illegal commerce, scraping, system penetration, malware injection, and fraudulent transactions.
+- **Refund Terms:** Subscription tiers and prepaid points are non-refundable except where mandated by Myanmar applicable laws.

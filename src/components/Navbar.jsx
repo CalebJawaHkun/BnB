@@ -115,13 +115,12 @@ export default function Navbar() {
           */}
           <div className="hidden sm:flex items-center gap-3">
             {!isOnboarded ? (
-              <button
-                type="button"
-                onClick={openOnboarding}
+              <Link
+                href="/book-a-demo"
                 className="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium px-5 py-2 transition-all hover:opacity-95 shadow-sm active:scale-95 cursor-pointer"
               >
                 Book a Demo
-              </button>
+              </Link>
             ) : (
               <div className="relative" ref={profileDropdownRef}>
                 <button
@@ -300,16 +299,13 @@ export default function Navbar() {
                 >
                   Sign In
                 </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openOnboarding();
-                  }}
+                <Link
+                  href="/book-a-demo"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 shadow-sm cursor-pointer"
                 >
                   Book a Demo
-                </button>
+                </Link>
               </>
             )}
           </div>

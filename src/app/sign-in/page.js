@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useOnboarding } from "@/context/OnboardingContext";
 
 export default function SignInPage() {
+  const router = useRouter();
+  const { completeOnboarding } = useOnboarding();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -11,21 +15,88 @@ export default function SignInPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const remembered = localStorage.getItem("bnb_remembered_email");
+      if (remembered && !email) {
+        setEmail(remembered);
+      }
+    }
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitting(true);
     setTimeout(() => {
+      const userProfile = {
+        ownerName: "Returning Boss",
+        businessName: "Boss Workspace",
+        businessType: "retail",
+        subCategory: "Fashion & Apparel",
+        teamSize: "small",
+        painPoints: ["late_inquiries"],
+        channels: ["messenger", "telegram"],
+        dailyVolume: "30-100",
+        authMethod: "credentials",
+        email: email || "boss@workspace.bnb",
+        phone: "+95 9442508508",
+        isPhoneVerified: true,
+        isEmailVerified: true,
+        createdAt: new Date().toISOString()
+      };
+      if (typeof window !== "undefined") {
+        localStorage.setItem("bnb_user", JSON.stringify({ name: userProfile.ownerName, email: userProfile.email }));
+        localStorage.setItem("bnb_business_profile", JSON.stringify(userProfile));
+        localStorage.setItem("bnb_onboarding_completed", "true");
+        localStorage.setItem("bnb_onboarding_suppressed", "true");
+        localStorage.setItem("bnb_has_logged_out", "false");
+        localStorage.setItem("bnb_remembered_email", userProfile.email);
+        window.dispatchEvent(new Event("bnb-auth-change"));
+      }
+      completeOnboarding(userProfile, { name: userProfile.ownerName, email: userProfile.email });
       setSubmitting(false);
       setSubmitted(true);
-    }, 1200);
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1000);
+    }, 1000);
   };
 
   const handleOAuthLogin = (provider) => {
     setSubmitting(true);
     setTimeout(() => {
+      const userProfile = {
+        ownerName: `${provider} Merchant`,
+        businessName: "Boss Workspace",
+        businessType: "retail",
+        subCategory: "Fashion & Apparel",
+        teamSize: "small",
+        painPoints: ["late_inquiries"],
+        channels: ["messenger", "telegram"],
+        dailyVolume: "30-100",
+        authMethod: provider.toLowerCase(),
+        email: `${provider.toLowerCase()}_boss@bossnbots.com`,
+        phone: "+95 9442508508",
+        isPhoneVerified: true,
+        isEmailVerified: true,
+        createdAt: new Date().toISOString()
+      };
+      if (typeof window !== "undefined") {
+        localStorage.setItem("bnb_user", JSON.stringify({ name: userProfile.ownerName, email: userProfile.email, provider }));
+        localStorage.setItem("bnb_business_profile", JSON.stringify(userProfile));
+        localStorage.setItem("bnb_onboarding_completed", "true");
+        localStorage.setItem("bnb_onboarding_suppressed", "true");
+        localStorage.setItem("bnb_has_logged_out", "false");
+        localStorage.setItem("bnb_remembered_email", userProfile.email);
+        window.dispatchEvent(new Event("bnb-auth-change"));
+      }
+      completeOnboarding(userProfile, { name: userProfile.ownerName, email: userProfile.email, provider });
       setSubmitting(false);
       setSubmitted(true);
-    }, 1000);
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1000);
+    }, 900);
   };
 
   return (

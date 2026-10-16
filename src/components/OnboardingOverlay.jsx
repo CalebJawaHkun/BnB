@@ -252,6 +252,16 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
   const [signInSubmitting, setSignInSubmitting] = useState(false);
   const [signInError, setSignInError] = useState("");
 
+  // Pre-fill remembered email for quick re-login
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedEmail = localStorage.getItem("bnb_remembered_email");
+      if (savedEmail && !signInIdentifier) {
+        setSignInIdentifier(savedEmail);
+      }
+    }
+  }, [mode, isOpen]);
+
   // Update sub-category when archetype toggles - do not preselect
   const handleTypeChange = (type) => {
     setBusinessType(type);
@@ -315,6 +325,9 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
         localStorage.setItem("bnb_user", JSON.stringify({ name: generatedName, email: generatedEmail, provider }));
         localStorage.setItem("bnb_business_profile", JSON.stringify(profile));
         localStorage.setItem("bnb_onboarding_completed", "true");
+        localStorage.setItem("bnb_onboarding_suppressed", "true");
+        localStorage.setItem("bnb_has_logged_out", "false");
+        localStorage.setItem("bnb_remembered_email", generatedEmail);
         window.dispatchEvent(new Event("bnb-auth-change"));
       }
       if (onComplete) {
@@ -362,6 +375,9 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
         localStorage.setItem("bnb_user", JSON.stringify({ name: profile.ownerName, email: profile.email, phone: profile.phone }));
         localStorage.setItem("bnb_business_profile", JSON.stringify(profile));
         localStorage.setItem("bnb_onboarding_completed", "true");
+        localStorage.setItem("bnb_onboarding_suppressed", "true");
+        localStorage.setItem("bnb_has_logged_out", "false");
+        localStorage.setItem("bnb_remembered_email", profile.email);
         window.dispatchEvent(new Event("bnb-auth-change"));
       }
       if (onComplete) {
@@ -404,6 +420,9 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
         localStorage.setItem("bnb_user", JSON.stringify({ name: "Returning Boss", email: existingProfile.email }));
         localStorage.setItem("bnb_business_profile", JSON.stringify(existingProfile));
         localStorage.setItem("bnb_onboarding_completed", "true");
+        localStorage.setItem("bnb_onboarding_suppressed", "true");
+        localStorage.setItem("bnb_has_logged_out", "false");
+        localStorage.setItem("bnb_remembered_email", existingProfile.email);
         window.dispatchEvent(new Event("bnb-auth-change"));
       }
       if (onComplete) {
@@ -418,6 +437,15 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
   const handleLaunchDashboard = () => {
     onClose();
     router.push("/dashboard");
+  };
+
+  const handleSkip = () => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("bnb_onboarding_suppressed", "true");
+      localStorage.setItem("bnb_onboarding_skipped", "true");
+      window.dispatchEvent(new Event("bnb-auth-change"));
+    }
+    onClose();
   };
 
   // Lock body scroll when overlay is active
@@ -474,7 +502,7 @@ export default function OnboardingOverlay({ isOpen, onClose, initialMode = "onbo
             {/* Skip Button instead of 'X' */}
             <button
               type="button"
-              onClick={onClose}
+              onClick={handleSkip}
               className="text-xs font-semibold text-slate-400 hover:text-slate-900 px-3 py-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
               aria-label="Skip onboarding"
             >
